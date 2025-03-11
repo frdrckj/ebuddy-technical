@@ -1,0 +1,26 @@
+{
+    "name": "monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "packageManager": "npm@10.9.2",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "start": "turbo run start",
+        "lint": "turbo run lint",
+        "dev:frontend": "turbo run dev --filter=frontend-repo",
+        "dev:backend": "turbo run dev --filter=backend-repo",
+        "build:frontend": "turbo run build --filter=frontend-repo",
+        "build:backend": "turbo run build --filter=backend-repo",
+        "start:frontend": "turbo run start --filter=frontend-repo",
+        "start:backend": "turbo run start --filter=backend-repo",
+        "firebase:emulators": "cd apps/backend && firebase emulators:start --only functions"
+    },
+    "devDependencies": {
+        "turbo": "^2.4.4"
+    }
+}
